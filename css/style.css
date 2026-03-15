@@ -115,7 +115,7 @@ h1 {
 
 ::placeholder {
   font-weight: 700;
-  font-size: 18;
+  font-size: 18px;
   color: black;
 }
 
@@ -127,10 +127,6 @@ h1 {
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
-}
-
-.btn-desktop:hover {
-    background: var(--color-light);
 }
 
 /* VERSION MOBILE */
@@ -229,3 +225,4 @@ h1 {
   width: 24px;
   height: 24px;
 }
+

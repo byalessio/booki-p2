@@ -19,8 +19,68 @@
     </header>
 
     <main>
-        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-        <p>En plein centre-ville ou en pleine nature</p>
+        <section>
+            <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+            <p>En plein centre-ville ou en pleine nature</p>
+
+            <form class="search-bar" action="#" method="post">
+                <label for="destination" class="icon-left">
+                    <i class="fa-solid fa-location-dot"></i>
+                </label>
+
+                <input type="text" id="recherche" name="destination" placeholder="Marseille, France">
+                
+                <button type="submit" class="btn-desktop">Rechercher</button>
+                <button type="submit" class="btn-mobile">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+            <div class="filtres">
+                <span>Filtres</span>
+                <ul class="filter-list">
+                    <li>
+                        <button type="button" class="filtres-btn">
+                            <span class="icon">
+                                <i class="fa-solid fa-money-bill-wave"></i>
+                            </span>
+                            Économique
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="filtres-btn">
+                            <span class="icon">
+                                <i class="fa-solid fa-person"></i>
+                            </span>
+                            Familial
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="filtres-btn">
+                            <span class="icon">
+                                <i class="fa-solid fa-heart"></i>
+                            </span>
+                            Romantique
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="filtres-btn">
+                            <span class="icon">
+                                <i class="fa-solid fa-fire"></i>
+                            </span>
+                            Nos pépites
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <p class="info">
+                <span class="info-btn">
+                    <i class="fa-solid fa-info"></i>
+                </span>
+                Plus de 500 logements sont disponibles dans cette ville
+            </p>
+        </section>
+
     </main>
 
 </body>

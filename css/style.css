@@ -55,31 +55,6 @@ main {
   padding: 0 20px;
 }
 
-/* HEADER RESPONSIVE*/
-/* Tablette */
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-
-}
-
-/* Mobile */
-@media screen and (max-width: 767px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
-
-  nav ul {     
-    gap: 15px;
-    margin-top: 10px;
-  }
-
-  nav ul li a:hover {
-    color: var(--color-primary);
-    text-decoration: underline;
-  }
-}
-
 /* FORM */
 h1 {
   font-size: 22px;
@@ -141,15 +116,6 @@ h1 {
     font-size: 1rem;
 }
 
-@media screen and (max-width: 767px) {
-    .btn-desktop {
-        display: none;
-    }
-    .btn-mobile {
-        display: block;
-    }
-}
-
 /* FILTRES */
 .filtres {
   margin-top: 25px;
@@ -175,6 +141,7 @@ h1 {
   border: 2px solid var(--color-background);
   font-size: 17px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .filtres-btn:hover {
@@ -183,27 +150,6 @@ h1 {
 
 .icon {
     color: var(--color-primary);
-}
-
-/* FILTRES  RESPONSIVE */
-@media screen and (max-width: 767px) {
-    .filtres {
-      flex-direction: column; /*On force a mettre en colmum le titre au dessus*/
-      align-items: flex-start;  /*Le titre à gauche*/ 
-    }
-    .filter-list {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .filter-list li {
-      flex: 1 1 calc(50% - 10px); /* 50% moins le gap */
-    }
-    .filtres-btn {
-        width: 100%;
-        padding: 12px 10px; /* On réduit un peu le padding pour que ça loge */
-        font-size: 14px;
-        white-space: nowrap; /* Évite que le texte saute à la ligne dans le bouton */
-    }
 }
 
 /* INFO */
@@ -226,3 +172,230 @@ h1 {
   height: 24px;
 }
 
+/* MAIN-HERO */
+.main-section {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+/* SECTION HÉBERGEMENTS */
+.hebergements {
+    flex: 2;
+    background-color: var(--color-background);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.hebergements h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.hebergements-liste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* CARD HÉBERGEMENT */
+.card {
+    flex: 1 1 calc(33.33% - 14px);
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.afficher-plus {
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.afficher-plus:hover {
+    text-decoration: underline;
+}
+
+/*ASIDE POPULAIRES */
+.populaires {
+    flex: 1;
+    background-color: var(--color-background);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.populaires-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.populaires-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.populaires-header .fa-chart-line {
+    font-size: 18px;
+    color: var(--color-primary);
+}
+
+/* CARD POPULAIRE — layout horizontal */
+.card-populaire {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-populaire a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.card-populaire img {
+    width: 40%;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+    flex-shrink: 0;
+}
+
+/* CARD INFO — partagé entre .card et .card-populaire */
+.card-info {
+    padding: 12px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+.card-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card-info p {
+    font-size: 14px;
+}
+
+.card-etoiles {
+    color: var(--color-primary);
+    font-size: 12px;
+    margin-top: auto;
+}
+
+/* RESPONSIVE TABLETTE */
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .main-section {
+    flex-direction: column; /* Le aside passe en dessous */
+  }
+  .populaires {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .populaires__header {
+    width: 100%;
+    display: flex;
+  }
+  .card-populaire {
+    flex: 1;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media screen and (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  nav ul {     
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  nav ul li a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .btn-desktop {
+    display: none;
+  }
+
+  .btn-mobile {
+    display: block;
+  }
+
+  .filtres {
+    flex-direction: column; /*On force a mettre en colmum le titre au dessus*/
+    align-items: flex-start;  /*Le titre à gauche*/ 
+  }
+
+  .filter-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .filter-list li {
+    flex: 1 1 calc(50% - 10px); /* 50% moins le gap */
+  }
+
+  .filtres-btn {
+    width: 100%;
+    padding: 12px 10px; /* On réduit un peu le padding pour que ça loge */
+    font-size: 14px;
+    white-space: nowrap; /* Évite que le texte saute à la ligne dans le bouton */
+  }
+
+  .main-section {
+    flex-direction: column-reverse; /* Le aside passe au-dessus du main ! */
+  }
+
+  .main-area, .populaires {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .hebergements {
+    background-color: transparent;
+  }
+
+  .hebergements-liste {
+    display: flex;
+    flex-direction: column;
+  }
+}

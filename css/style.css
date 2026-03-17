@@ -312,6 +312,86 @@ h1 {
     margin-top: auto;
 }
 
+/* Activités à Marseille */
+.activite {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.activite h2 {
+  padding: 20px;
+}
+
+.activite-cards {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  gap: 20px;
+  padding: 20px;
+}
+
+.card-activite {
+  display: flex;
+  width: 320px;
+  height: 450px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 3px 15px 0px #0000001A;
+  overflow: hidden; /* Coupe ce qui dépasse en l'occurence l'image */
+}
+
+.card-activite a {
+  text-decoration: none;
+}
+
+.card-activite img {
+  width: 120%;
+  height: 85%;
+  object-fit: cover;
+}
+
+.card-info-activite {
+  display: flex;
+  text-decoration: none;
+}
+
+.card-info-activite h3 {
+  color: black;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--color-background);
+  padding: 40px 30px;
+}
+
+.main-footer {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 15px;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-col li {
+  list-style: none;
+}
+
+.footer-col li a {
+  text-decoration: none;
+  color: black;
+}
+
 /* RESPONSIVE TABLETTE */
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
@@ -324,12 +404,19 @@ h1 {
     flex-wrap: wrap;
     gap: 20px;
   }
-  .populaires__header {
+  .populaires-header {
     width: 100%;
     display: flex;
   }
   .card-populaire {
     flex: 1;
+  }
+  .card-activite {
+    width: 200px;
+    height: 270px;
+  }
+  .card-activite img {
+    height: 200px;
   }
 }
 
@@ -397,5 +484,22 @@ h1 {
   .hebergements-liste {
     display: flex;
     flex-direction: column;
+  }
+  .activite-cards {
+    flex-direction: column;
+  }
+  .card-activite {
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+  }
+  .card-activite img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  .main-footer {
+    flex-direction: column;
+    gap: 50px;
   }
 }

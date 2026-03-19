@@ -41,11 +41,14 @@ nav ul {
 nav ul li a {
     color: black;
     text-decoration: none;
+    display: inline-block;
+    padding-top: 14px;
+    border-top: 2px solid transparent;
 }
 
 nav ul li a:hover {
     color: var(--color-primary);
-    text-decoration: overline;
+    border-top: 2px solid var(--color-primary);
 }
 
 main {
@@ -289,7 +292,8 @@ h1 {
 }
 
 /* CARD INFO — partagé entre .card et .card-populaire */
-.card-info {
+.card-info,
+.cardinfo {
     padding: 12px 15px 15px;
     display: flex;
     flex-direction: column;
@@ -297,12 +301,14 @@ h1 {
     flex: 1;
 }
 
-.card-info h3 {
+.card-info h3,
+.cardinfo h3 {
     font-size: 16px;
     font-weight: 700;
 }
 
-.card-info p {
+.card-info p,
+.cardinfo p {
     font-size: 14px;
 }
 
@@ -332,7 +338,7 @@ h1 {
 
 .card-activite {
   display: flex;
-  width: 320px;
+  flex: 1;
   height: 450px;
   background-color: white;
   border-radius: 20px;
@@ -342,21 +348,29 @@ h1 {
 
 .card-activite a {
   text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .card-activite img {
-  width: 120%;
-  height: 85%;
+  width: 100%;
+  height: 390px;
   object-fit: cover;
 }
 
 .card-info-activite {
   display: flex;
+  align-items: center;
   text-decoration: none;
+  padding: 15px 20px;
+  height: 60px;
 }
 
 .card-info-activite h3 {
   color: black;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 /* FOOTER */
@@ -398,45 +412,77 @@ footer {
   .main-section {
     flex-direction: column; /* Le aside passe en dessous */
   }
+  
   .populaires {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
   }
+
   .populaires-header {
     width: 100%;
     display: flex;
   }
+
   .card-populaire {
     flex: 1;
   }
+
   .card-activite {
-    width: 200px;
+    flex: 1;
     height: 270px;
   }
+
   .card-activite img {
-    height: 200px;
+    height: 210px;
   }
 }
 
 /* RESPONSIVE MOBILE */
 
 @media screen and (max-width: 767px) {
+  main {
+    padding: 0;
+  }
+
+  main > section:first-child {
+    padding: 0 20px;
+  } /* Supprime le padding du main pour que les sections grises 
+  (populaires, footer) collent aux bords de l'écran, puis remet le padding sur la première section (titre, recherche, filtres) */
+
   header {
     flex-direction: column;
     align-items: center;
     padding: 15px;
+    height: auto;
+  }
+
+  nav {
+    width: 100%;
   }
 
   nav ul {     
-    gap: 15px;
+    gap: 0;
     margin-top: 10px;
+  }
+
+  nav ul li {
+    flex: 1;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 14px 0;
+    border-top: none;
+    border-bottom: 2px solid var(--color-background);
   }
 
   nav ul li a:hover {
     color: var(--color-primary);
-    text-decoration: underline;
+    border-top: none;
+    border-bottom: 2px solid var(--color-primary);
   }
 
   .btn-desktop {
@@ -495,7 +541,7 @@ footer {
   }
   .card-activite img {
     width: 100%;
-    height: 150px;
+    height: 140px;
     object-fit: cover;
   }
   .main-footer {

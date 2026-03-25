@@ -41,8 +41,9 @@ nav ul {
 nav ul li a {
     color: black;
     text-decoration: none;
-    display: inline-block;
-    padding-top: 14px;
+    display: flex;
+    align-items: center;
+    height: 79px;
     border-top: 2px solid transparent;
 }
 
@@ -56,6 +57,7 @@ main {
   min-width: 320px;
   margin: 0 auto;
   padding: 0 20px;
+  margin-top: 30px;
 }
 
 /* FORM */
@@ -216,6 +218,7 @@ h1 {
     border-radius: 20px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border: 5px solid white;
 }
 
 .card a {
@@ -278,6 +281,7 @@ h1 {
     border-radius: 20px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border: 5px solid white;
 }
 
 .card-populaire a {
@@ -298,7 +302,7 @@ h1 {
 
 /* CARD INFO — partagé entre .card et .card-populaire */
 .card-info {
-    padding: 12px 15px 15px;
+    padding: 12px 15px 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -318,6 +322,7 @@ h1 {
     color: var(--color-primary);
     font-size: 12px;
     margin-top: auto;
+    padding-bottom: 2px;
 }
 
 .card-etoiles span {
@@ -337,7 +342,6 @@ h1 {
 
 .activite-cards {
   display: flex;
-  /*flex-wrap: wrap;*/
   gap: 20px;
   padding: 20px;
 }
@@ -349,7 +353,7 @@ h1 {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0px 3px 15px 0px #0000001A;
-  overflow: hidden; /* Coupe ce qui dépasse en l'occurence l'image */
+  overflow: hidden; /* Coupe ce qui dépasse de l'image */
 }
 
 .card-activite a {
@@ -418,7 +422,7 @@ footer {
 
 /* RESPONSIVE TABLETTE */
 
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1024px) {
   .main-section {
     flex-direction: column; /* Le aside passe en dessous */
   }
@@ -458,6 +462,7 @@ footer {
 @media screen and (max-width: 768px) {
   main {
     padding: 0;
+    margin-top: 0;
   }
 
   main > section:first-child {
@@ -493,6 +498,7 @@ footer {
 
   nav ul li a {
     display: block;
+    height: auto;
     padding: 14px 0;
     border-top: none;
     border-bottom: 2px solid var(--color-background);
@@ -540,6 +546,19 @@ footer {
   .main-area, .populaires {
     width: 100%;
     border-radius: 0;
+  }
+
+  .populaires {
+    flex-direction: column;
+  }
+  
+  .card-populaire a {
+    height: auto;
+  }
+
+  .card-populaire img {
+      width: 40%;
+      height: 130px;
   }
 
   .hebergements {

@@ -244,10 +244,6 @@ h1 {
     align-self: flex-start;
 }
 
-.afficher-plus:hover {
-    text-decoration: underline;
-}
-
 /*ASIDE POPULAIRES */
 .populaires {
     flex: 1;
@@ -385,10 +381,10 @@ h1 {
 
 /* FOOTER */
 footer {
-  max-width: 1440px;
+  max-width: 1400px;
+  width: calc(100% - 40px);
   min-width: 320px;
-  margin: 0 auto;
-  margin-top: 25px;
+  margin: 25px auto 0;
   background-color: var(--color-background);
   padding: 40px 30px;
 }
@@ -459,7 +455,7 @@ footer {
 
 /* RESPONSIVE MOBILE */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   main {
     padding: 0;
     margin-top: 0;
@@ -590,5 +586,11 @@ footer {
   .main-footer {
     flex-direction: column;
     gap: 50px;
+  }
+  
+  footer {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
 }

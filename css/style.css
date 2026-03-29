@@ -529,10 +529,16 @@ footer {
   }
 
   .filtres-btn {
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 12px 10px; /* On réduit un peu le padding pour que ça loge */
+    padding: 12px 6px 12px 12px;
     font-size: 14px;
     white-space: nowrap; /* Évite que le texte saute à la ligne dans le bouton */
+  }
+
+  .filtres-btn .icon {
+    margin-right: 8px;
   }
 
   .main-section {
